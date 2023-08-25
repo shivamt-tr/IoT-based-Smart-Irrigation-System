@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "author": "Pranshu Sahijwani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -16.74, "left": 140.41, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -199.07, "left": -244.65, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -193.91, "left": 705.77, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": 263.89, "left": -264.22, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 265.81, "left": 697.88, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -323.64,
+      "left": 564.79,
+      "attrs": { "temperature": "48.9", "humidity": "42.5" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht2",
+      "top": -325.7,
+      "left": -37.02,
+      "attrs": { "temperature": "80", "humidity": "8.5" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht3",
+      "top": 369.72,
+      "left": -54.51,
+      "attrs": { "temperature": "-9.8", "humidity": "51" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht4",
+      "top": 371.72,
+      "left": 555.85,
+      "attrs": { "temperature": "18.7", "humidity": "54.5" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -210.78,
+      "left": 203.47,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -414.63,
+      "left": 101.51,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "dht1:GND", "mega:GND.2", "black", [ "v441.5", "h-306.74" ] ],
+    [ "dht2:GND", "mega:GND.2", "black", [ "v479.55", "h297.19" ] ],
+    [ "dht3:GND", "mega:GND.2", "black", [ "v-3.03", "h315.8" ] ],
+    [ "dht4:GND", "mega:GND.2", "black", [ "v46.42", "h-297.99" ] ],
+    [ "ldr1:VCC", "mega:5V", "red", [ "h53.46", "v-287.84", "h-818.77", "v701.46", "h641.86" ] ],
+    [
+      "ldr1:GND",
+      "mega:GND.2",
+      "black",
+      [ "h70.16", "v-321.18", "h-856.13", "v749.65", "h675.23" ]
+    ],
+    [ "dht2:VCC", "mega:5V", "red", [ "v428.04", "h316.34" ] ],
+    [ "dht3:VCC", "mega:5V", "red", [ "v25.09", "h-302.98", "v-260.6", "h632.09" ] ],
+    [ "dht4:VCC", "mega:5V", "red", [ "v18.66", "h-228.02" ] ],
+    [ "dht1:VCC", "mega:5V", "red", [ "v423.33", "h-274.21" ] ],
+    [ "ldr1:DO", "mega:10", "green", [ "h72.32", "v137.36", "h-199.7" ] ],
+    [ "dht2:SDA", "mega:2", "green", [ "v150.28", "h385.9" ] ],
+    [ "dht3:SDA", "mega:4", "green", [ "v43.14", "h-377.36", "v-576.35", "h761.71" ] ],
+    [ "dht4:SDA", "mega:8", "green", [ "v31.83", "h347.88", "v-536.22", "h-623.44" ] ],
+    [ "dht1:SDA", "mega:6", "green", [ "v172.48", "h-257.58" ] ],
+    [ "servo1:GND", "mega:GND.2", "black", [ "h-28.52", "v350.16", "h574.46" ] ],
+    [ "servo3:GND", "mega:GND.2", "black", [ "h-37.87", "v-120.26", "h602.7" ] ],
+    [ "servo2:GND", "mega:GND.2", "black", [ "h-68.29", "v445.66", "h-361.65" ] ],
+    [ "servo1:PWM", "mega:3", "green", [ "h-13.43", "v52.47", "h618.06" ] ],
+    [ "servo3:PWM", "mega:5", "green", [ "h-48.12", "v-429.1", "h649.62" ] ],
+    [ "servo2:PWM", "mega:7", "green", [ "h0" ] ],
+    [
+      "servo4:PWM",
+      "mega:9",
+      "green",
+      [ "h-35.63", "v42.29", "h304.58", "v-486.92", "h-696.32" ]
+    ],
+    [ "servo3:V+", "mega:5V", "green", [ "h-22.14", "v21.39", "h560.11" ] ],
+    [ "servo4:V+", "mega:5V", "green", [ "h0" ] ],
+    [ "servo2:V+", "mega:5V", "green", [ "h-58.6", "v483.85", "h-327.08" ] ],
+    [ "servo1:V+", "mega:5V", "green", [ "h-380.4", "v498.27", "h907.41" ] ],
+    [ "servo4:GND", "mega:GND.2", "black", [ "h0" ] ],
+    [ "lcd1:GND", "mega:GND.1", "black", [ "h-14.64", "v261.76", "h162.18" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h6.52", "v556.5", "h185.79" ] ],
+    [ "lcd1:SDA", "mega:20", "green", [ "h-46.48", "v124.3", "h416.64" ] ],
+    [ "lcd1:SCL", "mega:21", "green", [ "h-23.78", "v-83.99", "h419.36" ] ],
+    [ "ldr1:AO", "mega:A0", "green", [ "h176.44", "v356.74", "h-203.44" ] ]
+  ]
+}
